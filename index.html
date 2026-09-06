@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colin Summerhayes — Books on Climate, Oceans &amp; the Polar Regions</title>
+<meta name="description" content="Books by Dr Colin Summerhayes, climate scientist and author, covering the polar regions, oceans, the Anthropocene, and Antarctic history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#1a6c7a;
+    --navy:#153243;
+    --navy-dark:#000f2b;
+    --ink:#3a3a3a;
+    --bg-light:#f3f9fb;
+    --white:#ffffff;
+    --accent-light:#BFD1FF;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Source Sans 3', sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Montserrat', sans-serif;
+    color:var(--navy);
+    margin:0 0 .5em;
+  }
+  a{color:var(--teal);}
+  a:hover{color:var(--navy);}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header.site-header{
+    background:var(--navy-dark);
+    color:var(--white);
+    padding:20px 0;
+  }
+  header.site-header .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .site-title{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--white);
+    letter-spacing:.5px;
+  }
+  .site-title span{
+    display:block;
+    font-family:'Source Sans 3', sans-serif;
+    font-weight:400;
+    font-size:.8rem;
+    color:var(--accent-light);
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+  nav.category-nav ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    margin:0;
+    padding:0;
+  }
+  nav.category-nav a{
+    color:var(--white);
+    text-decoration:none;
+    font-family:'Montserrat', sans-serif;
+    font-size:.85rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    border-bottom:2px solid transparent;
+    padding-bottom:3px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  nav.category-nav a:hover{
+    color:var(--accent-light);
+    border-color:var(--teal);
+  }
+
+  /* About section */
+  section.about{
+    background:var(--bg-light);
+    padding:56px 0 48px;
+  }
+  section.about h1{
+    font-size:2.1rem;
+    margin-bottom:.2em;
+  }
+  section.about .role{
+    font-family:'Montserrat', sans-serif;
+    color:var(--teal);
+    font-weight:600;
+    margin-bottom:1.4em;
+    font-size:1rem;
+  }
+  section.about .bio-columns{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:40px;
+  }
+  section.about p{margin:0 0 1em;}
+  .author-photo{
+    float:right;
+    width:200px;
+    margin:0 0 16px 24px;
+    border-radius:6px;
+    box-shadow:0 4px 14px rgba(0,15,43,.18);
+  }
+  .credentials{
+    background:var(--white);
+    border:1px solid #dfeef2;
+    border-radius:6px;
+    padding:20px 24px;
+  }
+  .credentials h3{
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--teal);
+    margin-bottom:.8em;
+  }
+  .credentials ul{
+    margin:0;
+    padding-left:1.1em;
+    font-size:.92rem;
+  }
+  .credentials li{margin-bottom:.5em;}
+
+  @media (max-width:800px){
+    section.about .bio-columns{grid-template-columns:1fr;}
+  }
+
+  /* Wave divider */
+  .wave-divider{
+    display:block;
+    width:100%;
+    line-height:0;
+  }
+  .wave-divider svg{width:100%;height:auto;display:block;}
+
+  /* Books */
+  main.books{
+    background:var(--white);
+    padding:8px 0 60px;
+  }
+  main.books h2.section-title{
+    text-align:center;
+    font-size:2rem;
+    margin:0 0 8px;
+  }
+  main.books > .wrap > .intro{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 40px;
+    color:var(--ink);
+  }
+
+  .category-block{
+    margin-bottom:56px;
+  }
+  .category-block h3{
+    font-size:1.5rem;
+    border-bottom:3px solid var(--teal);
+    display:inline-block;
+    padding-bottom:6px;
+    margin-bottom:28px;
+  }
+
+  .book-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:32px;
+  }
+  .book-card{
+    display:flex;
+    flex-direction:column;
+    background:var(--bg-light);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 1px 4px rgba(0,15,43,.08);
+  }
+  .book-cover{
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+  }
+  .book-cover img{
+    max-height:280px;
+    width:auto;
+    margin:0 auto;
+    box-shadow:0 4px 14px rgba(0,0,0,.35);
+  }
+  .book-info{
+    padding:18px 20px 22px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+  }
+  .book-info h4{
+    font-size:1.05rem;
+    margin-bottom:.2em;
+  }
+  .book-meta{
+    font-size:.82rem;
+    color:var(--teal);
+    font-weight:600;
+    margin-bottom:.8em;
+  }
+  .book-blurb{
+    font-size:.92rem;
+    color:var(--ink);
+    margin-bottom:1.2em;
+    flex-grow:1;
+  }
+  .book-link{
+    align-self:flex-start;
+    display:inline-block;
+    font-family:'Montserrat', sans-serif;
+    font-size:.75rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--teal);
+    text-decoration:none;
+    border:2px solid var(--teal);
+    padding:10px 22px;
+    border-radius:2px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .book-link:hover{
+    background:var(--teal);
+    color:var(--white);
+  }
+
+  /* Footer */
+  footer.site-footer{
+    background:var(--navy-dark);
+    color:var(--accent-light);
+    text-align:center;
+    padding:24px 0;
+    font-size:.85rem;
+  }
+  footer.site-footer a{color:var(--white);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="site-title">Colin Summerhayes<span>Climate Scientist &amp; Author</span></div>
+    <nav class="category-nav" aria-label="Book categories">
+      <ul>
+        <li><a href="#polar">Polar</a></li>
+        <li><a href="#oceans">Oceans</a></li>
+        <li><a href="#anthropocene">Anthropocene</a></li>
+        <li><a href="#antarctic-history">Antarctic History</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap">
+    <h1>About Colin</h1>
+    <p class="role">Emeritus Associate, Scott Polar Research Institute, Cambridge University</p>
+    <div class="bio-columns">
+      <div>
+        <img class="author-photo" src="images/colin-summerhayes.png" alt="Photo of Colin Summerhayes">
+        <p>Dr Colin Summerhayes is an Emeritus Associate in Cambridge University's Scott Polar Research Institute (SPRI). He is also a former Director of the UK's Institute of Oceanographic Sciences Deacon Laboratory (IOSDL).</p>
+        <p>Colin has spent over a year at sea studying aspects of climate change on multiple research cruises around the world, along with six visits to different parts of Antarctica, several trips to the Arctic, and several visits to the icy parts of the world's mountain ranges. He has also worked as a marine scientist for the New Zealand Oceanographic Institute, the University of Cape Town, the Woods Hole Oceanographic Institution, Exxon Production Research Co and BP Research Co, and UNESCO's Intergovernmental Oceanographic Commission.</p>
+        <p>Colin has published several books and numerous scientific journal articles on climate change, and gives talks on topics including the oceans, climate change, and energy.</p>
+        <p>Colin studied Geology and Geochemistry at University College London, Oxford University, Imperial College London, and Victoria University in Wellington, New Zealand. He holds a PhD in Geochemistry, a Masters and a Doctor of Science degree in Geology.</p>
+        <p>Colin also happens to be a champion green lawn bowler, a keen bird-watcher who has published three scientific papers on the seabirds of the southern oceans, and probably the only geologist ever to have been bitten by an albatross. Summerhayes Inlet, on the east coast of the Antarctic Peninsula, is named after him.</p>
+      </div>
+      <div class="credentials">
+        <h3>Selected Roles</h3>
+        <ul>
+          <li>Deputy Director, Southampton Oceanography Centre (now the National Oceanography Centre)</li>
+          <li>Director, Global Ocean Observing System (GOOS)</li>
+          <li>First Executive Director, Scientific Committee on Antarctic Research (SCAR)</li>
+          <li>Member, Anthropocene Working Group, Sub-commission on Quaternary Stratigraphy</li>
+          <li>Vice President, Geological Society of London</li>
+          <li>Chair, International Advisory Board, International Arctic Science Committee (IASC)</li>
+          <li>Chair, International Advisory Board, Korean Polar Research Institute (KOPRI)</li>
+          <li>Visiting Professor in Geological Sciences, University College London</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider" role="img" aria-label="Ocean waves">
+  <svg viewBox="0 0 1200 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C150,120 300,0 450,50 C600,100 750,20 900,60 C1050,100 1150,50 1200,70 L1200,0 L0,0 Z" fill="#f3f9fb"></path>
+    <path d="M0,90 C160,40 320,140 480,90 C640,40 800,120 960,80 C1080,52 1150,70 1200,90 L1200,160 L0,160 Z" fill="#1a6c7a" opacity="0.55"></path>
+    <path d="M0,110 C180,150 340,70 520,110 C700,150 860,90 1040,120 C1120,134 1160,120 1200,112 L1200,160 L0,160 Z" fill="#153243"></path>
+  </svg>
+</div>
+
+<main class="books">
+  <div class="wrap">
+    <h2 class="section-title">Colin's Books</h2>
+    <p class="intro">In-depth coverage of the science, from the polar regions and oceans to the Anthropocene and the history of Antarctic exploration.</p>
+
+    <div class="category-block" id="polar">
+      <h3>Polar</h3>
+      <div class="book-grid">
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/the-icy-planet.jpg" alt="Cover of The Icy Planet"></div>
+          <div class="book-info">
+            <h4>The Icy Planet</h4>
+            <div class="book-meta">2022 · Oxford University Press</div>
+            <p class="book-blurb">Saving Earth's refrigerator. Ice, snow and permafrost are mostly out of sight and out of mind, yet they reflect the Sun's energy and keep the planet cool. As warming melts them away, this book charts a path forward beyond Net Zero.</p>
+            <a class="book-link" href="https://global.oup.com/academic/product/the-icy-planet-9780197627983?cc=gb&amp;lang=en&amp;" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/paleoclimatology.png" alt="Cover of Paleoclimatology"></div>
+          <div class="book-info">
+            <h4>Paleoclimatology</h4>
+            <div class="book-meta">2020 · Wiley Blackwell</div>
+            <p class="book-blurb">From Snowball Earth to the Anthropocene. An expanded, more lavishly illustrated successor to Earth's Climate Evolution, explaining how the climate system works, how it has changed through geological time, and what past changes tell us about the future.</p>
+            <a class="book-link" href="https://www.wiley.com/en-uz/Paleoclimatology%3A+From+Snowball+Earth+to+the+Anthropocene-p-9781119591504" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/science-in-the-snow.jpg" alt="Cover of Science in the Snow"></div>
+          <div class="book-info">
+            <h4>Science in the Snow</h4>
+            <div class="book-meta">2018 · Scientific Committee on Antarctic Research</div>
+            <p class="book-blurb">Sixty years of international collaboration in Antarctic science, coordinated by SCAR since the International Geophysical Year of 1957-58. Written to introduce the general reader to why Antarctica is such a critical part of the Earth System.</p>
+            <a class="book-link" href="https://scar.org/scar-library/other-publications/occasional-publications/sci-snow/" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/earths-climate-evolution.jpeg" alt="Cover of Earth's Climate Evolution"></div>
+          <div class="book-info">
+            <h4>Earth's Climate Evolution</h4>
+            <div class="book-meta">2015 · Wiley Blackwell</div>
+            <p class="book-blurb">The first edition of what would later become Paleoclimatology — a geological perspective on how Earth's climate system works and how it has evolved over time.</p>
+            <a class="book-link" href="https://www.wiley.com/en-uz/Earth%27s+Climate+Evolution-p-9781118897379" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/international-polar-year.png" alt="Cover of International Polar Year 2007-2008"></div>
+          <div class="book-info">
+            <h4>International Polar Year 2007-2008</h4>
+            <div class="book-meta">2011 · CCI Press / SCAR</div>
+            <p class="book-blurb">A summary report on the largest polar research effort ever undertaken — 50,000 people from over 60 nations on 170 projects — compiled by 300 authors and reviewers for the IPY's co-sponsors, ICSU and the WMO.</p>
+            <a class="book-link" href="https://www.scar.org/library/scar-publications/occasional-publications/3505-understanding-earth-s-polar-challenges/" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/antarctic-climate-change-environment.jpeg" alt="Cover of Antarctic Climate Change and the Environment"></div>
+          <div class="book-info">
+            <h4>Antarctic Climate Change and the Environment</h4>
+            <div class="book-meta">2009 · Scientific Committee on Antarctic Research</div>
+            <p class="book-blurb">A survey of the great white continent, from its environment and life within the global climate system, through the technologies used to monitor it, to its history and what the next 100 years may bring.</p>
+            <a class="book-link" href="https://scar.org/scar-library/other-publications/occasional-publications/3508-antarctic-climate-change-and-the-environment-1/" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="category-block" id="oceans">
+      <h3>Oceans</h3>
+      <div class="book-grid">
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/understanding-the-oceans.jpg" alt="Cover of Understanding the Oceans"></div>
+          <div class="book-info">
+            <h4>Understanding the Oceans</h4>
+            <div class="book-meta">2001 · CRC Press</div>
+            <p class="book-blurb">A Century of Ocean Exploration. An internationally distinguished group of authors surveys the advances in marine science made since the voyages of HMS Challenger a century earlier, written with the non-specialist reader in mind.</p>
+            <a class="book-link" href="https://www.routledge.com/Understanding-the-Oceans-A-Century-of-Ocean-Exploration/Deacon-Summerhayes-Rice/p/book/9781857287066" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/oceans-2020.png" alt="Cover of Oceans 2020"></div>
+          <div class="book-info">
+            <h4>Oceans 2020</h4>
+            <div class="book-meta">2002 · Island Press</div>
+            <p class="book-blurb">Science, Trends, and the Challenge of Sustainability. A comprehensive assessment of the science and societal issues likely to shape marine science and ocean management in the first 20 years of the 21st century.</p>
+            <a class="book-link" href="https://www.amazon.co.uk/Oceans-2020-Science-Challenge-Sustainability/dp/1559634707" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/oceanography-illustrated-guide.jpg" alt="Cover of Oceanography: An Illustrated Guide"></div>
+          <div class="book-info">
+            <h4>Oceanography: An Illustrated Guide</h4>
+            <div class="book-meta">1996 · Wiley Blackwell</div>
+            <p class="book-blurb">A richly illustrated introduction to oceanography from 40 contributors worldwide, spanning history, instrumentation, physical geography, meteorology, biology and chemistry of the sea — suitable for coursework and general readers alike.</p>
+            <a class="book-link" href="https://www.wiley.com/en-sg/Oceanography:+An+Illustrated+Guide-p-9781874545378" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/upwelling-in-the-ocean.jpg" alt="Cover of Upwelling in the Ocean"></div>
+          <div class="book-info">
+            <h4>Upwelling in the Ocean</h4>
+            <div class="book-meta">1994 · Wiley Blackwell</div>
+            <p class="book-blurb">Modern Processes and Ancient Records. Upwelling drives 80-90% of new ocean productivity and underpins major fishing grounds; this volume examines how upwelling systems work and how they have shaped global nutrient and carbon cycles.</p>
+            <a class="book-link" href="https://www.amazon.co.uk/Upwelling-Ocean-Processes-Workshop-Environmental/dp/0471960411" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/north-atlantic-palaeoceanography.png" alt="Cover of North Atlantic Palaeoceanography"></div>
+          <div class="book-info">
+            <h4>North Atlantic Palaeoceanography</h4>
+            <div class="book-meta">1986 · The Geological Society</div>
+            <p class="book-blurb">A review of results from the Deep Sea Drilling Program, covering the development of North Atlantic oceanography through ocean circulation, sedimentation, and Cenozoic and Mesozoic palaeoceanography.</p>
+            <a class="book-link" href="https://www.amazon.co.uk/Atlantic-Palaeoceanography-Geological-Society-Publications/dp/0632015160" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/upwelling-systems.png" alt="Cover of Upwelling Systems"></div>
+          <div class="book-info">
+            <h4>Upwelling Systems: Evolution Since the Early Miocene</h4>
+            <div class="book-meta">1992 · The Geological Society</div>
+            <p class="book-blurb">Traces the sedimentary record of coastal upwelling currents since the establishment of modern ocean circulation in the Miocene, drawing on results from deep ocean drilling.</p>
+            <a class="book-link" href="https://www.lyellcollection.org/toc/sp/64/1" target="_blank" rel="noopener">Download</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="category-block" id="anthropocene">
+      <h3>Anthropocene</h3>
+      <div class="book-grid">
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/the-anthropocene.png" alt="Cover of The Anthropocene as a Geological Time Unit"></div>
+          <div class="book-info">
+            <h4>The Anthropocene as a Geological Time Unit</h4>
+            <div class="book-meta">2019 · Cambridge University Press</div>
+            <p class="book-blurb">Presents the evidence for defining the Anthropocene as a geological epoch — from pollution signals to landscape and biological change — set against the scale of natural planetary processes and past transitions in Earth history.</p>
+            <a class="book-link" href="https://www.amazon.co.uk/Anthropocene-Geological-Time-Unit-Scientific/dp/110847523X" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="category-block" id="antarctic-history">
+      <h3>Antarctic History</h3>
+      <div class="book-grid">
+
+        <div class="book-card">
+          <div class="book-cover"><img src="images/third-reich-in-antarctica.png" alt="Cover of The Third Reich in Antarctica"></div>
+          <div class="book-info">
+            <h4>The Third Reich in Antarctica</h4>
+            <div class="book-meta">2012 · The Erskine Press</div>
+            <p class="book-blurb">The German Antarctic Expedition, 1938-39. The story of the Schwabenland's aerial survey of Dronning Maud Land, its discoveries of a vast mountain range and unsuspected freshwater lakes, and Germany's thwarted attempt to claim the territory.</p>
+            <a class="book-link" href="https://www.amazon.co.uk/Third-Reich-Antarctica-Antarctic-Expedition/dp/1852971037" target="_blank" rel="noopener">Buy</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    &copy; <span id="year"></span> Colin Summerhayes
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
